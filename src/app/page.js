@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import '../../tailwind.css';
 
-//import styles from './page.module.css';
+import styles from './page.module.css'; 
+
 
 export default function Home() {
   
@@ -12,7 +12,7 @@ export default function Home() {
       
       <div className="bg-white">
         <div className="relative">
-          <div >
+           <div className={`${styles.topBar} flex justify-center bg-teal-700/50`}>
             <div className="mx-8"><Link href="/"><button type="submit">Home</button></Link></div>
             <div className="mx-8"><Link href="/productos"><button type="submit">Productos</button></Link></div>
             <div className="mx-8"><Link href="/acerca"><button type="submit">Nosotros</button></Link></div>
