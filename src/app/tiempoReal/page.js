@@ -29,7 +29,7 @@ if (!firebase.apps.length) {
 
 export default function MyMonitoring() {
 
-
+/*
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
       navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
@@ -41,7 +41,7 @@ export default function MyMonitoring() {
       });
     });
   }
-
+*/
   const [data, setData] = useState([]); 
   const [historialData, setHistorialData] = useState([]);// para almacenar los datos obtenidos
   const [showMenu, setShowMenu] = useState(false);
@@ -126,15 +126,15 @@ UseruidRef.update({ Usuario: user.uid })
     
     function showNotification(title, body, icon, sound) {
       console.log(notificationPermission);
-      if (notificationPermission === 'granted' && navigator.serviceWorker) {
-        navigator.serviceWorker.ready.then(registration => {
+      if (notificationPermission === 'granted' /*&& navigator.serviceWorker */) {
+        //navigator.serviceWorker.ready.then(registration => {
           registration.showNotification(title, { body: body, icon: icon  });
           console.log("Notification sent");
           var audio = new Audio(sound);
           audio.play().catch(error => {
             console.error("Error playing sound: ", error);
           });
-        });
+        //});
       }
     }
     
