@@ -114,26 +114,31 @@ UseruidRef.update({ Usuario: user.uid })
     }, []);
 
 
-    const [notificationPermission, setNotificationPermission] = useState(Notification.permission);
-
-  useEffect(() => {
-    if (Notification.permission === 'default') {
-      Notification.requestPermission().then(permission => {
-        setNotificationPermission(permission);
-      });
-    }
-  }, []);
+    const [notificationPermission, setNotificationPermission] = useState(
+      typeof window !== 'undefined' ? Notification.permission : 'denied'
+    );
+    
+    useEffect(() => {
+      if (typeof window !== 'undefined' && Notification.permission === 'default') {
+        Notification.requestPermission().then(permission => {
+          setNotificationPermission(permission);
+        });
+      }
+    }, []);
     
     function showNotification(title, body, icon, sound) {
       console.log(notificationPermission);
-      if (notificationPermission === 'granted' /*&& navigator.serviceWorker */) {
+      if (
+        typeof window !== 'undefined' &&
+        notificationPermission === 'granted' /*&& navigator.serviceWorker */
+      ) {
         //navigator.serviceWorker.ready.then(registration => {
-          registration.showNotification(title, { body: body, icon: icon  });
-          console.log("Notification sent");
-          var audio = new Audio(sound);
-          audio.play().catch(error => {
-            console.error("Error playing sound: ", error);
-          });
+        registration.showNotification(title, { body: body, icon: icon });
+        console.log('Notification sent');
+        var audio = new Audio(sound);
+        audio.play().catch(error => {
+          console.error('Error playing sound: ', error);
+        });
         //});
       }
     }
