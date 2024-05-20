@@ -1,21 +1,24 @@
-'use client'
-
+import dynamic from 'next/dynamic';
 import Link from "next/link";
-import { getAuth, createUserWithEmailAndPassword, sendConfirmationEmail, emailVerified } from "../../../lib/firebase/api";
-import { auth } from "../../../lib/firebase/api";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import styles from "../page.module.css";
 
+const FirebaseAPI = dynamic(
+  () => import('../../../lib/firebase/api'),
+  { ssr: false } // This will load the module only on client side
+);
+
 export default function RegisterForm(){
-  const router= useRouter()
+  const router = useRouter()
   const estilo1 = "w-full p-1 border border-cyan-500 mt-2"
   const [credenciales, setCredenciales] = useState({
     email: '',
     password: ''
   })
- 
+
   const checkEmailVerification = async () => {
+    const { emailVerified } = await FirebaseAPI();
     try {
       const isEmailVerified = await emailVerified();
       if (isEmailVerified){
@@ -27,17 +30,19 @@ export default function RegisterForm(){
       console.error('Error checking email verification:', error);
     }
   }
-  
-const sendEmail = async () => {
-  try{
-    await sendConfirmationEmail();
-    window.alert('Se ha enviado un correo de verificación. Revisa tu bandeja de entrada.')
-  } catch (error) {
-    console.error('Error signing up:', error);
+
+  const sendEmail = async () => {
+    const { sendConfirmationEmail } = await FirebaseAPI();
+    try{
+      await sendConfirmationEmail();
+      window.alert('Se ha enviado un correo de verificación. Revisa tu bandeja de entrada.')
+    } catch (error) {
+      console.error('Error signing up:', error);
+    }
   }
-}
 
   const SignUp = async () => {
+    const { createUserWithEmailAndPassword } = await FirebaseAPI();
     try {
       const { email, password } = credenciales;
 
