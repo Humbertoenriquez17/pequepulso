@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import 'tailwindcss/tailwind.css';
+import '../../tailwind.css';
 
 //import styles from './page.module.css';
 
