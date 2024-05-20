@@ -1,0 +1,274 @@
+/*  Paleta de colores
+Moradito bb-#A09BCA
+Amarillo bb- #FFF1A7
+Azul bb- #97CFC3
+Rosita bb-#F7BFD5*/
+.main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 6rem;
+    min-height: 100vh;
+    /*background-image: url("/GatoblancoJs.png");*/
+    /*background-repeat: repeat;*/
+}
+
+.styleA{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(151, 232, 220);
+    border:3px rgb(151, 232, 220);
+    border-radius: 1rem;
+    max-width: 100%;
+    padding: 10px;
+    margin:5px 0;
+    position: relative;
+}
+
+.styleJ{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(151, 232, 220);
+    border:3px rgb(151, 232, 220);
+    border-radius: 1rem;
+    max-width: 100%;
+    padding: 10px;
+    margin:5px 0;
+    position: relative;
+}
+
+.styleH{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(151, 232, 220);
+    border:3px rgb(151, 232, 220);
+    border-radius: 1rem;
+    max-width: 100%;
+    padding: 10px;
+    margin:5px 0;
+    position: relative;
+}
+
+.styleS{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(151, 232, 220);
+    border:3px rgb(151, 232, 220);
+    border-radius: 1rem;
+    max-width: 100%;
+    padding: 10px;
+    margin:5px 0;
+    position: relative;
+}
+
+.styleHu{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(151, 232, 220);
+    border:3px rgb(151, 232, 220);
+    border-radius: 1rem;
+    max-width:100%;
+    padding: 10px;
+    margin:5px 0;
+    position: relative;
+}
+
+.styleG{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(151, 232, 220);
+    border:3px rgb(151, 232, 220);
+    border-radius: 1rem;
+    max-width: 100%;
+    padding: 10px;
+    margin:5px 0;
+    position: relative;
+}
+
+.h1{
+    color:rgb(91, 20, 20);
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium';
+}
+
+.hA{
+    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+    font-size: 18px;
+    margin:0px;
+    color:rgb(28,38,37);
+    margin-bottom: 20%;
+    text-align: center;
+}
+
+.hJ{
+    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+    font-size: 18px;
+    margin:0px;
+    color:rgb(28,38,37);
+    margin-bottom: 20%;
+}
+
+.hH{
+    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+    font-size: 18px;
+    margin:0px;
+    color:rgb(28,38,37);
+    margin-bottom: 20%;
+    text-align: center;
+}
+
+.hS{
+    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+    font-size: 18px;
+    margin:0px;
+    color:rgb(28,38,37);
+    margin-bottom: 20%;
+    text-align: center;
+}
+
+.hHu{
+    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+    font-size: 18px;
+    margin:0px;
+    color:rgb(28,38,37);
+    margin-bottom: 20%;
+    text-align: center;
+}
+
+.hG{
+    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+    font-size: 18px;
+    margin:0px;
+    color:rgb(28,38,37);
+    margin-bottom: 20%;
+    text-align: center;
+}
+
+.imgResponsive {
+    max-width: 100%;
+    max-height: 100%;
+    height: 400px;
+}
+
+.textcontainer, .column{
+    margin:10px;
+}
+
+.column {
+    flex: 0 0 auto; /* Ambas columnas ocupan el mismo espacio */
+    max-width: 50%;
+    border-left: 1px solid #ccc;
+}
+
+.triangle{
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 100px solid firebrick;
+    position: absolute;
+    right:-110px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor:pointer;
+}
+
+.triangleL{
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-right: 100px solid firebrick;
+    position: absolute;
+    left:-110px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor:pointer;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #97CFC3;
+    color: white;
+    border: solid 1px #97CFC3;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    outline: none;
+    border-color:#5b587a;
+    background-color: white;
+    color:#5b587a;
+  }
+
+/* Estilo de las casillas en las que se ingresan datos*/
+.inputField {
+    padding: 10px;
+    margin: 10px;
+    border: solid 1px white;
+    border-radius: 4px;
+    background-color: white;
+    color: #5b587a;
+}
+.inputField:focus{
+    outline: none;
+    border-color:#73718a;
+}
+/* Estilo de las casilla cuando ya contiene datos*/
+.inputField:not(:placeholder-shown) {
+    outline: none;
+    border: none;
+    color: #5b587a;
+    background-color: #ededed;
+  }
+.registerContainer{
+    display: flex;
+    background-color:white;
+    justify-content: center;
+    height: fit-content;
+    align-items: center;
+    border-radius: 5px;
+
+}
+.registerBox{
+    width: 300px;
+    padding: 20px;
+    border: none;
+    border-radius: 7px;
+    background-color: #A09BCA;
+    flex: 1; /* Establece que el .registerBox ocupe todo el espacio disponible en la dirección principal (vertical) */
+    max-height: 100%; /* Asegura que el .registerBox no exceda la altura del .registerContainer */
+    overflow-y: auto; /* Agrega desplazamiento vertical si el contenido excede la altura */
+    box-sizing: border-box;
+}
+
+
+.topBar {
+    background-color: rgb(229, 81, 152); /* Color rosa fucsia */
+    height: 40px; /* Ajusta la altura de la barra superior */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .topBar button {
+    font-size: 18px; /* Ajusta el tamaño de la fuente de los botones */
+    color: white; 
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .topBar button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
