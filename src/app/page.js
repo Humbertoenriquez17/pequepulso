@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import '../../styles/tailwind.css';
-import styles from './page.module.css';
+import 'tailwindcss/tailwind.css';
+
+//import styles from './page.module.css';
 
 export default function Home() {
   
